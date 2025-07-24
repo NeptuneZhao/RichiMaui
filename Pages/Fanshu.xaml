@@ -14,6 +14,7 @@
 			   VerticalOptions="Center"
 			   Padding="20" />
 
+            <HorizontalStackLayout Spacing="20">
 			<VerticalStackLayout x:Name="ZhuangjiaPanding"
 								Spacing="-5"
 								RadioButtonGroup.GroupName="ZhuangOrXianjia"
@@ -49,6 +50,13 @@
 							 Value="1"/>
 
             </VerticalStackLayout>
+            <VerticalStackLayout Spacing="20">
+                <Button Text="计算!"
+						Clicked="CalDaDian"/>
+
+                <Label x:Name="DaDianLabel"/>
+            </VerticalStackLayout>
+            </HorizontalStackLayout>
 
             <HorizontalStackLayout>
                 <Label Text="本场数" FontSize="20"/>
@@ -56,8 +64,58 @@
                 <Entry
                     Placeholder="0"
                     Keyboard="Numeric"
-                    MaxLength="1"/>
+                    MaxLength="1"
+                    Completed="OnBenchangCompleted"/>
             </HorizontalStackLayout>
+
+            <VerticalStackLayout x:Name="FanshuControl"
+                                 Spacing="5"
+                                 RadioButtonGroup.GroupName="Fanshu"
+                                 RadioButtonGroup.SelectedValue="{Binding Fan}">
+                <Label Text="翻数" FontSize="20"/>
+                <HorizontalStackLayout Spacing="10">
+                    <RadioButton Content="1翻" Value="1" />
+                    <RadioButton Content="2翻" Value="2" />
+                    <RadioButton Content="3翻" Value="3" />
+                    <RadioButton Content="4翻" Value="4" />
+
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="15">
+                    <RadioButton Content="满贯" Value="5" />
+                    <RadioButton Content="跳满" Value="6" />
+                    <RadioButton Content="倍满" Value="8" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="15">
+                    <RadioButton Content="三倍满" Value="11" />
+                    <RadioButton Content="役满" Value="13" />
+                    <RadioButton Content="双倍役满" Value="26" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout x:Name="FushuControl"
+                                 Spacing="5"
+                                 RadioButtonGroup.GroupName="Fushu"
+                                 RadioButtonGroup.SelectedValue="{Binding Fu}">
+                <Label Text="符数" FontSize="20"/>
+                <HorizontalStackLayout Spacing="10">
+                    <RadioButton Content="20符" Value="20" />
+                    <RadioButton Content="25符" Value="25" />
+                    <RadioButton Content="30符" Value="30" />
+                    <RadioButton Content="40符" Value="40" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <RadioButton Content="50符" Value="50" />
+                    <RadioButton Content="60符" Value="60" />
+                    <RadioButton Content="70符" Value="70" />
+                    <RadioButton Content="80符" Value="80" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <RadioButton Content="90符" Value="90" />
+                    <RadioButton Content="100符" Value="100" />
+                    <RadioButton Content="110符" Value="110" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <Label x:Name="MessageDisplay" FontSize="28"/>
         </VerticalStackLayout>
 	</Grid>
 </ContentPage>  
