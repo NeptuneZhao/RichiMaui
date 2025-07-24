@@ -1,25 +1,63 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RichiMaui.Pages.Fanshu"
-             Title="Fanshu">
-    <Grid RowDefinitions="Auto,*">
-        <Label Text="役表"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Padding="10" />
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:RichiMaui.PageModels"
+			 x:Class="RichiMaui.Pages.Fanshu"
+			 x:DataType="local:FanshuModel"
+			 Title="Fanshu">
+	<Grid RowDefinitions="Auto,*">
+		<VerticalStackLayout>
+		<Label Text="真·打点计算器"
+			   FontSize="24"
+			   FontAttributes="Bold"
+			   HorizontalOptions="Center"
+			   VerticalOptions="Center"
+			   Padding="20" />
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout>
-                <HorizontalStackLayout>
-                    <CheckBox x:Name="Riichi"/>
-                    <Label Text="立直"/>
-                    
-                </HorizontalStackLayout>
+			<VerticalStackLayout x:Name="ZhuangjiaPanding"
+								Spacing="-5"
+								RadioButtonGroup.GroupName="ZhuangOrXianjia"
+								RadioButtonGroup.SelectedValue="{Binding ZhuangOrXianjia}">
+
+				<Label  Text="庄家/闲家"
+						FontSize="20"/>
+
+				<RadioButton x:Name="Zhuangjia"
+							 Content="庄家"
+							 Value="6"/>
+				
+				<RadioButton x:Name="Xianjia"
+							 Content="闲家"
+							 Value="4"/>
+                
+			</VerticalStackLayout>
+
+            <VerticalStackLayout x:Name="ZimoOrRong"
+								Spacing="-5"
+								RadioButtonGroup.GroupName="ZimoOrRong"
+								RadioButtonGroup.SelectedValue="{Binding ZimoOrRong}">
+
+                <Label  Text="自摸/荣"
+						FontSize="20"/>
+
+                <RadioButton x:Name="Zimo"
+							 Content="自摸"
+							 Value="0"/>
+
+                <RadioButton x:Name="Rong"
+							 Content="荣"
+							 Value="1"/>
 
             </VerticalStackLayout>
-        </ScrollView>
-    </Grid>
+
+            <HorizontalStackLayout>
+                <Label Text="本场数" FontSize="20"/>
+
+                <Entry
+                    Placeholder="0"
+                    Keyboard="Numeric"
+                    MaxLength="1"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+	</Grid>
 </ContentPage>  
