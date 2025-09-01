@@ -10,13 +10,8 @@ public partial class Fanshu : ContentPage
 		MessageDisplay.Text = "";
 	}
 
-    public void OnBenchangCompleted(object sender, EventArgs e)
+	private async void CalDaDian(object sender, EventArgs e)
 	{
-		((FanshuModel)BindingContext).BenChang = ((Editor)sender).Text;
-	}
-
-    private async void CalDaDian(object sender, EventArgs e)
-    {
 		FanshuModel model = (FanshuModel)BindingContext;
 
 		bool displayAlert = false;
@@ -30,13 +25,13 @@ public partial class Fanshu : ContentPage
 		if (model.ZimoOrRong is null)
 		{
 			msg += "自摸/荣；";
-            displayAlert = true;
-        }
-        if (model.Fan is null)
+			displayAlert = true;
+		}
+		if (model.Fan is null)
 		{
 			msg += "翻数；";
-            displayAlert = true;
-        }
+			displayAlert = true;
+		}
 		int fan = 0, fu = 0;
 		if (model.Fan is not null)
 		{
@@ -63,7 +58,7 @@ public partial class Fanshu : ContentPage
 		int zhuang = int.Parse(model.ZhuangOrXianjia.ToString()),
 			zimo = int.Parse(model.ZimoOrRong.ToString());
 
-        string messageDisplay =
+		string messageDisplay =
 			(zhuang == 6 ? "庄家 " : "闲家 ") +
 			(zimo == 0 ? "自摸 " : "荣和 ") +
 			(model.BenChang is null ? 0 : model.BenChang.ToString()) + "本场 ";
@@ -102,16 +97,17 @@ public partial class Fanshu : ContentPage
 		}
 		else
 		{
-            if (zimo == 0)
-            {
-                show = $"{Upper(normalDian) + 100 * benChang} / {Upper(normalDian * 2) + 100 * benChang}";
-            }
-            else
-                show = $"{Upper(normalDian * 4) + 300 * benChang}";
+			if (zimo == 0)
+			{
+				show = $"{Upper(normalDian) + 100 * benChang} / {Upper(normalDian * 2) + 100 * benChang}";
+			}
+			else
+				show = $"{Upper(normalDian * 4) + 300 * benChang}";
 
-        }
+		}
 		DaDianLabel.Text = show;
-    }
+		MessageDisplay.Text = messageDisplay + "付 " + show;
+	}
 
 	private static int Upper(int value)
 	{
@@ -120,5 +116,5 @@ public partial class Fanshu : ContentPage
 			return value;
 		else
 			return 100 * ((int)(value / 100.0) + 1);
-    }
+	}
 }

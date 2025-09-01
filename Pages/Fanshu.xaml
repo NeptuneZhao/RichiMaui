@@ -6,7 +6,7 @@
 			 x:DataType="local:FanshuModel"
 			 Title="Fanshu">
 	<Grid RowDefinitions="Auto,*">
-		<VerticalStackLayout>
+		<VerticalStackLayout Margin="20">
 		<Label Text="真·打点计算器"
 			   FontSize="24"
 			   FontAttributes="Bold"
@@ -56,16 +56,6 @@
 
                 <Label x:Name="DaDianLabel"/>
             </VerticalStackLayout>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout>
-                <Label Text="本场数" FontSize="20"/>
-
-                <Entry
-                    Placeholder="0"
-                    Keyboard="Numeric"
-                    MaxLength="1"
-                    Completed="OnBenchangCompleted"/>
             </HorizontalStackLayout>
 
             <VerticalStackLayout x:Name="FanshuControl"

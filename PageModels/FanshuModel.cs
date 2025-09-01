@@ -2,6 +2,9 @@
 
 namespace RichiMaui.PageModels
 {
+    /// <summary>
+    /// 计算点数的绑定模板。
+    /// </summary>
     public class FanshuModel : INotifyPropertyChanged
     {
         object

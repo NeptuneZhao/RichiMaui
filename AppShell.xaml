@@ -31,7 +31,7 @@
 
     <!--This is the yibiao menu controller.-->
     <ShellContent
-        Title="役表"
+        Title="真·打点计算器"
         Icon="{StaticResource IconCalculator}"
         ContentTemplate="{DataTemplate pages:Fanshu}"
         Route="fanshu" />
@@ -42,6 +42,12 @@
         Icon="{StaticResource IconCalculator}"
         ContentTemplate="{DataTemplate pages:Calculator}"
         Route="calculator" />
+
+    <ShellContent
+        Title="摇骰子"
+        Icon="{StaticResource IconPill}"
+        ContentTemplate="{DataTemplate pages:Paishan}"
+        Route="paishan" />
 
     <!--This is the light/dark mode menu controller.-->
 	<Shell.FlyoutFooter>

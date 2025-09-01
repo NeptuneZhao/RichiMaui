@@ -1,0 +1,45 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RichiMaui.Pages.Paishan"
+             Title="麻将码牌助手">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <!-- 显示骰子点数 -->
+        <Label x:Name="DiceResultLabel"
+               Text="请摇骰子"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- 按钮：摇骰子 -->
+        <Button Text="摇骰子" Clicked="OnRollDiceClicked" />
+
+        <!-- 显示起始玩家 -->
+        <Label x:Name="StartPlayerLabel"
+               Text="起抓位置："
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <!-- 显示切牌摞号 -->
+        <Label x:Name="SplitStackLabel"
+               Text="切牌摞号："
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="WallView"
+                        ItemsLayout="HorizontalList"
+                        HeightRequest="100">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Stroke="{x:Null}" Background="{Binding Color}" Margin="2" WidthRequest="30" HeightRequest="50" Padding="0">
+                        <Label Text="{Binding Index}" 
+                               FontSize="12" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

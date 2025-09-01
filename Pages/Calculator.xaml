@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:RichiMaui.PageModels"
+			 xmlns:local="clr-namespace:RichiMaui.PageModels"
 			 x:Class="RichiMaui.Pages.Calculator"
-             x:DataType="local:CalculatorBindingModel"
+			 x:DataType="local:CalculatorBindingModel"
 			 Title="Calculator">
-    <Grid RowDefinitions="Auto,*">
+	<Grid RowDefinitions="Auto,*">
 		<!-- 固定标题 -->
 		<Label Text="打点计算器" FontSize="24"
 			   FontAttributes="Bold"
@@ -15,19 +15,19 @@
 
 		<!-- 滚动区域 -->
 		<ScrollView Grid.Row="1">
-			<VerticalStackLayout>
+			<VerticalStackLayout Margin="15">
 				<!--胡牌和听牌-->
 				<HorizontalStackLayout Spacing="30">
 					<VerticalStackLayout x:Name="HupaiLayout"
-                                         Spacing="-5"
-                                         RadioButtonGroup.GroupName="HupaiType"
-                                         RadioButtonGroup.SelectedValue="{Binding HupaiType}">
+										 Spacing="-5"
+										 RadioButtonGroup.GroupName="HupaiType"
+										 RadioButtonGroup.SelectedValue="{Binding HupaiType}">
 						<Label Text="胡牌类型"
 							   FontSize="20"
 							   FontAttributes="Bold"/>
 
 						<RadioButton x:Name="HupaiFulu"
-                                     Content="副露自摸+0"
+									 Content="副露自摸+0"
 									 Value="0" />
 
 						<RadioButton x:Name="HupaiZimo"
@@ -39,11 +39,11 @@
 									 Value="2" />
 					</VerticalStackLayout>
 
-                    <VerticalStackLayout x:Name="TingpaiLayout"
-                                         Spacing="-5"
-                                         RadioButtonGroup.GroupName="TingpaiType"
-                                         RadioButtonGroup.SelectedValue="{Binding TingpaiType}">
-                        <Label Text="听牌"
+					<VerticalStackLayout x:Name="TingpaiLayout"
+										 Spacing="-5"
+										 RadioButtonGroup.GroupName="TingpaiType"
+										 RadioButtonGroup.SelectedValue="{Binding TingpaiType}">
+						<Label Text="听牌"
 							   FontSize="20"
 							   FontAttributes="Bold" />
 
@@ -59,17 +59,17 @@
 
 					<VerticalStackLayout Spacing="20">
 						<Button Text="计算!"
-								Clicked="CalculateFu"/>
+                                Clicked="CalculateFu"/>
 
 						<Label x:Name="FushuLabel"/>
 					</VerticalStackLayout>
 				</HorizontalStackLayout>
 				
-                <!--面子1-->
+				<!--面子1-->
 				<HorizontalStackLayout x:Name="Mianzi1Layout"
-                                       Spacing="10"
-                                       RadioButtonGroup.GroupName="Mianzi1"
-                                       RadioButtonGroup.SelectedValue="{Binding Mianzi1Type}">
+									   Spacing="10"
+									   RadioButtonGroup.GroupName="Mianzi1"
+									   RadioButtonGroup.SelectedValue="{Binding Mianzi1Type}">
 					<Label Text="面子1"
 						   FontSize="20"
 						   FontAttributes="Bold"
@@ -80,17 +80,17 @@
 
 					<VerticalStackLayout Spacing="0">
 						<RadioButton x:Name="Mianzi1Mingke"
-                                     Content="明刻中张+2"
-                                     Value="2" />
+									 Content="明刻中张+2"
+									 Value="2" />
 
 						<RadioButton Content="暗刻中张+4"
-                                     Value="-4" />
+									 Value="-4" />
 
 						<RadioButton Content="明杠中张+8"
-                                     Value="-8" />
+									 Value="-8" />
 
 						<RadioButton Content="暗杠中张+16"
-                                     Value="-16" />
+									 Value="-16" />
 					</VerticalStackLayout>
 
 					<VerticalStackLayout Spacing="0">
@@ -108,134 +108,134 @@
 					</VerticalStackLayout>
 				</HorizontalStackLayout>
 
-                <HorizontalStackLayout x:Name="Mianzi2Layout"
-                                       Spacing="10"
-                                       RadioButtonGroup.GroupName="Mianzi2"
-                                       RadioButtonGroup.SelectedValue="{Binding Mianzi2Type}">
-                    <Label Text="面子2"
+				<HorizontalStackLayout x:Name="Mianzi2Layout"
+									   Spacing="10"
+									   RadioButtonGroup.GroupName="Mianzi2"
+									   RadioButtonGroup.SelectedValue="{Binding Mianzi2Type}">
+					<Label Text="面子2"
 						   FontSize="20"
 						   FontAttributes="Bold"
 						   VerticalTextAlignment="Center"/>
 
-                    <RadioButton Content="顺"
+					<RadioButton Content="顺"
 								 Value="0" />
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻中张+2"
-                                         Value="2" />
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻中张+2"
+										 Value="2" />
 
-                        <RadioButton Content="暗刻中张+4"
-                                         Value="-4" />
+						<RadioButton Content="暗刻中张+4"
+										 Value="-4" />
 
-                        <RadioButton Content="明杠中张+8"
-                                         Value="-8" />
+						<RadioButton Content="明杠中张+8"
+										 Value="-8" />
 
-                        <RadioButton Content="暗杠中张+16"
-                                         Value="-16" />
-                    </VerticalStackLayout>
+						<RadioButton Content="暗杠中张+16"
+										 Value="-16" />
+					</VerticalStackLayout>
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻幺九+4"
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻幺九+4"
 									 Value="4" />
 
-                        <RadioButton Content="暗刻幺九+8"
+						<RadioButton Content="暗刻幺九+8"
 									 Value="8" />
 
-                        <RadioButton Content="明杠幺九+16"
+						<RadioButton Content="明杠幺九+16"
 									 Value="16" />
 
-                        <RadioButton Content="暗杠幺九+32"
+						<RadioButton Content="暗杠幺九+32"
 									 Value="32" />
-                    </VerticalStackLayout>
-                </HorizontalStackLayout>
+					</VerticalStackLayout>
+				</HorizontalStackLayout>
 
-                <HorizontalStackLayout x:Name="Mianzi3Layout"
-                                       Spacing="10"
-                                       RadioButtonGroup.GroupName="Mianzi3"
-                                       RadioButtonGroup.SelectedValue="{Binding Mianzi3Type}">
-                    <Label Text="面子3"
+				<HorizontalStackLayout x:Name="Mianzi3Layout"
+									   Spacing="10"
+									   RadioButtonGroup.GroupName="Mianzi3"
+									   RadioButtonGroup.SelectedValue="{Binding Mianzi3Type}">
+					<Label Text="面子3"
 						   FontSize="20"
 						   FontAttributes="Bold"
 						   VerticalTextAlignment="Center"/>
 
-                    <RadioButton Content="顺"
+					<RadioButton Content="顺"
 								 Value="0" />
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻中张+2"
-                                         Value="2" />
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻中张+2"
+										 Value="2" />
 
-                        <RadioButton Content="暗刻中张+4"
-                                         Value="-4" />
+						<RadioButton Content="暗刻中张+4"
+										 Value="-4" />
 
-                        <RadioButton Content="明杠中张+8"
-                                         Value="-8" />
+						<RadioButton Content="明杠中张+8"
+										 Value="-8" />
 
-                        <RadioButton Content="暗杠中张+16"
-                                         Value="-16" />
-                    </VerticalStackLayout>
+						<RadioButton Content="暗杠中张+16"
+										 Value="-16" />
+					</VerticalStackLayout>
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻幺九+4"
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻幺九+4"
 									 Value="4" />
 
-                        <RadioButton Content="暗刻幺九+8"
+						<RadioButton Content="暗刻幺九+8"
 									 Value="8" />
 
-                        <RadioButton Content="明杠幺九+16"
+						<RadioButton Content="明杠幺九+16"
 									 Value="16" />
 
-                        <RadioButton Content="暗杠幺九+32"
+						<RadioButton Content="暗杠幺九+32"
 									 Value="32" />
-                    </VerticalStackLayout>
-                </HorizontalStackLayout>
+					</VerticalStackLayout>
+				</HorizontalStackLayout>
 
-                <HorizontalStackLayout x:Name="Mianzi4Layout"
-                                       Spacing="10"
-                                       RadioButtonGroup.GroupName="Mianzi4"
-                                       RadioButtonGroup.SelectedValue="{Binding Mianzi4Type}">
-                    <Label Text="面子4"
+				<HorizontalStackLayout x:Name="Mianzi4Layout"
+									   Spacing="10"
+									   RadioButtonGroup.GroupName="Mianzi4"
+									   RadioButtonGroup.SelectedValue="{Binding Mianzi4Type}">
+					<Label Text="面子4"
 						   FontSize="20"
 						   FontAttributes="Bold"
 						   VerticalTextAlignment="Center"/>
 
-                    <RadioButton Content="顺"
+					<RadioButton Content="顺"
 								 Value="0" />
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻中张+2"
-                                         Value="2" />
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻中张+2"
+										 Value="2" />
 
-                        <RadioButton Content="暗刻中张+4"
-                                         Value="-4" />
+						<RadioButton Content="暗刻中张+4"
+										 Value="-4" />
 
-                        <RadioButton Content="明杠中张+8"
-                                         Value="-8" />
+						<RadioButton Content="明杠中张+8"
+										 Value="-8" />
 
-                        <RadioButton Content="暗杠中张+16"
-                                         Value="-16" />
-                    </VerticalStackLayout>
+						<RadioButton Content="暗杠中张+16"
+										 Value="-16" />
+					</VerticalStackLayout>
 
-                    <VerticalStackLayout Spacing="0">
-                        <RadioButton Content="明刻幺九+4"
+					<VerticalStackLayout Spacing="0">
+						<RadioButton Content="明刻幺九+4"
 									 Value="4" />
 
-                        <RadioButton Content="暗刻幺九+8"
+						<RadioButton Content="暗刻幺九+8"
 									 Value="8" />
 
-                        <RadioButton Content="明杠幺九+16"
+						<RadioButton Content="明杠幺九+16"
 									 Value="16" />
 
-                        <RadioButton Content="暗杠幺九+32"
+						<RadioButton Content="暗杠幺九+32"
 									 Value="32" />
-                    </VerticalStackLayout>
-                </HorizontalStackLayout>
-                
-                <!--雀头-->
-                <HorizontalStackLayout x:Name="quetou"
-                                       Spacing="10"
-                                       RadioButtonGroup.GroupName="Quetou"
-                                       RadioButtonGroup.SelectedValue="{Binding QuetouType}">
+					</VerticalStackLayout>
+				</HorizontalStackLayout>
+				
+				<!--雀头-->
+				<HorizontalStackLayout x:Name="quetou"
+									   Spacing="10"
+									   RadioButtonGroup.GroupName="Quetou"
+									   RadioButtonGroup.SelectedValue="{Binding QuetouType}">
 					<Label Text="雀头"
 						   FontSize="20"
 						   FontAttributes="Bold"
